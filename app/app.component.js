@@ -11,13 +11,14 @@ var AppComponent = (function () {
     function AppComponent() {
         this.types = ['Sunny', 'Flurries', 'Thunder', 'Rainy', 'Sun-Shower', 'Cloudy'];
         this.spot = getRandomInt(0, 6);
+        this.weather = 'Sunny';
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n    <h1>My Sandbox</h1>\n    <h2>Animated Weather Icons</h2>\n    <div>\n      <div>\n        <font>March 8, 2017</font>\n      </div>\n      <sunny *ngIf=\"types[spot] === 'Sunny'\"></sunny>\n      <flurries *ngIf=\"types[spot] === 'Flurries'\"></flurries>\n      <thunder *ngIf=\"types[spot] === 'Thunder'\"></thunder>\n      <rainy *ngIf=\"types[spot] === 'Rainy'\"></rainy>\n      <sun-shower *ngIf=\"types[spot] === 'Sun-Shower'\"></sun-shower>\n      <cloudy *ngIf=\"types[spot] === 'Cloudy'\"></cloudy>\n    </div>\n  "
+        template: "\n    <h1>My Sandbox</h1>\n    <h2>Animated Weather Icons</h2>\n    <div>\n      <div>\n        <font>March 8, 2017</font>\n      </div>\n      <div [ngSwitch]=\"types[spot]\">\n        <sunny *ngSwitchCase = \"'Sunny'\"></sunny>\n        <flurries *ngSwitchCase = \"'Flurries'\"></flurries>\n        <thunder *ngSwitchCase = \"'Thunder'\"></thunder>\n        <rainy *ngSwitchCase = \"'Rainy'\"></rainy>\n        <sun-shower *ngSwitchCase = \"'Sun-Shower'\"></sun-shower>\n        <cloudy *ngSwitchCase = \"'Cloudy'\"></cloudy>\n      </div>\n\n    </div>\n  "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

@@ -16,12 +16,15 @@ import { CloudyComponent } from './weather/cloudy.component';
       <div>
         <font>March 8, 2017</font>
       </div>
-      <sunny *ngIf="types[spot] === 'Sunny'"></sunny>
-      <flurries *ngIf="types[spot] === 'Flurries'"></flurries>
-      <thunder *ngIf="types[spot] === 'Thunder'"></thunder>
-      <rainy *ngIf="types[spot] === 'Rainy'"></rainy>
-      <sun-shower *ngIf="types[spot] === 'Sun-Shower'"></sun-shower>
-      <cloudy *ngIf="types[spot] === 'Cloudy'"></cloudy>
+      <div [ngSwitch]="types[spot]">
+        <sunny *ngSwitchCase = "'Sunny'"></sunny>
+        <flurries *ngSwitchCase = "'Flurries'"></flurries>
+        <thunder *ngSwitchCase = "'Thunder'"></thunder>
+        <rainy *ngSwitchCase = "'Rainy'"></rainy>
+        <sun-shower *ngSwitchCase = "'Sun-Shower'"></sun-shower>
+        <cloudy *ngSwitchCase = "'Cloudy'"></cloudy>
+      </div>
+
     </div>
   `
 })
@@ -29,6 +32,7 @@ import { CloudyComponent } from './weather/cloudy.component';
 export class AppComponent {
   types = ['Sunny', 'Flurries', 'Thunder', 'Rainy', 'Sun-Shower', 'Cloudy'];
   spot = getRandomInt(0,6);
+  weather = 'Sunny';
 }
 
 function getRandomInt(min, max) {
