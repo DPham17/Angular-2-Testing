@@ -30,7 +30,7 @@ AppModule = __decorate([
             thunder_storm_component_1.ThunderComponent,
             rainy_component_1.RainyComponent,
             sun_shower_component_1.SunShowerComponent,
-            cloudy_component_1.CloudyComponent
+            cloudy_component_1.CloudyComponent,
         ],
         bootstrap: [app_component_1.AppComponent]
     })

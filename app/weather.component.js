@@ -7,21 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var WeatherService = (function () {
-    function WeatherService() {
+var WeatherComponent = (function () {
+    function WeatherComponent() {
     }
-    WeatherService.prototype.getWeather = function () {
+    WeatherComponent.prototype.getWeather = function () {
         return ["Sunny", "Foggy", "Windy", "Snowing"];
     };
-    return WeatherService;
+    return WeatherComponent;
 }());
-WeatherService = __decorate([
+WeatherComponent = __decorate([
     core_1.Component({
         selector: 'my-weather',
         moduleId: module.id,
         templateUrl: 'weather.component.html',
         styleUrls: ['weather.component.css']
     })
-], WeatherService);
-exports.WeatherService = WeatherService;
-//# sourceMappingURL=weather.service.js.map
+], WeatherComponent);
+exports.WeatherComponent = WeatherComponent;
+//# sourceMappingURL=weather.component.js.map

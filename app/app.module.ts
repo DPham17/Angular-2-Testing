@@ -17,7 +17,7 @@ import { CloudyComponent } from './weather/cloudy.component';
     ThunderComponent,
     RainyComponent,
     SunShowerComponent,
-    CloudyComponent
+    CloudyComponent,
   ],
   bootstrap: [ AppComponent ]
 })

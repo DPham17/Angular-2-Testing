@@ -7,18 +7,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var Weather = (function () {
+    function Weather() {
+    }
+    return Weather;
+}());
+exports.Weather = Weather;
+var WEATHERS = [
+    { id: 1, name: 'Sunny' },
+    { id: 2, name: 'Flurries' },
+    { id: 3, name: 'Thunder' },
+    { id: 4, name: 'Rainy' },
+    { id: 5, name: 'Sun-Shower' },
+    { id: 6, name: 'Cloudy' }
+];
 var AppComponent = (function () {
     function AppComponent() {
         this.types = ['Sunny', 'Flurries', 'Thunder', 'Rainy', 'Sun-Shower', 'Cloudy'];
         this.spot = getRandomInt(0, 6);
-        this.weather = 'Sunny';
+        this.weather = WEATHERS;
     }
+    AppComponent.prototype.onSelect = function (weather) {
+        this.selectedWeather = weather;
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n    <h1>My Sandbox</h1>\n    <h2>Animated Weather Icons</h2>\n    <div>\n      <div>\n        <font>March 8, 2017</font>\n      </div>\n      <div [ngSwitch]=\"types[spot]\">\n        <sunny *ngSwitchCase = \"'Sunny'\"></sunny>\n        <flurries *ngSwitchCase = \"'Flurries'\"></flurries>\n        <thunder *ngSwitchCase = \"'Thunder'\"></thunder>\n        <rainy *ngSwitchCase = \"'Rainy'\"></rainy>\n        <sun-shower *ngSwitchCase = \"'Sun-Shower'\"></sun-shower>\n        <cloudy *ngSwitchCase = \"'Cloudy'\"></cloudy>\n      </div>\n\n    </div>\n  "
+        moduleId: module.id,
+        templateUrl: 'app.component.html',
+        styleUrls: ['app.component.css']
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

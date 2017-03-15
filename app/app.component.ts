@@ -6,33 +6,38 @@ import { RainyComponent } from './weather/rainy.component';
 import { SunShowerComponent } from './weather/sun-shower.component';
 import { CloudyComponent } from './weather/cloudy.component';
 
+export class Weather {
+  id: number;
+  name: string;
+}
+
+const WEATHERS: Weather[] = [
+  { id: 1, name: 'Sunny' },
+  { id: 2, name: 'Flurries' },
+  { id: 3, name: 'Thunder' },
+  { id: 4, name: 'Rainy' },
+  { id: 5, name: 'Sun-Shower' },
+  { id: 6, name: 'Cloudy' }
+];
 
 @Component({
   selector: 'my-app',
-  template: `
-    <h1>My Sandbox</h1>
-    <h2>Animated Weather Icons</h2>
-    <div>
-      <div>
-        <font>March 8, 2017</font>
-      </div>
-      <div [ngSwitch]="types[spot]">
-        <sunny *ngSwitchCase = "'Sunny'"></sunny>
-        <flurries *ngSwitchCase = "'Flurries'"></flurries>
-        <thunder *ngSwitchCase = "'Thunder'"></thunder>
-        <rainy *ngSwitchCase = "'Rainy'"></rainy>
-        <sun-shower *ngSwitchCase = "'Sun-Shower'"></sun-shower>
-        <cloudy *ngSwitchCase = "'Cloudy'"></cloudy>
-      </div>
-
-    </div>
-  `
+  moduleId: module.id,
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css']
 })
 
 export class AppComponent {
   types = ['Sunny', 'Flurries', 'Thunder', 'Rainy', 'Sun-Shower', 'Cloudy'];
   spot = getRandomInt(0,6);
-  weather = 'Sunny';
+
+  weather = WEATHERS;
+  selectedWeather: Weather;
+
+  onSelect(weather: Weather): void {
+    this.selectedWeather = weather;
+  }
+
 }
 
 function getRandomInt(min, max) {

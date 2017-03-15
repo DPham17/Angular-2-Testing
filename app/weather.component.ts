@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['weather.component.css']
 })
 
-export class WeatherService {
+export class WeatherComponent {
   getWeather() : string[] {
     return ["Sunny", "Foggy", "Windy", "Snowing"];
   }

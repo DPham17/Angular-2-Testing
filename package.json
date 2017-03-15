@@ -2,10 +2,12 @@
   "name": "angular-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" s",
     "lite": "lite-server",
     "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "tsc:w": "tsc -w",
+    "pree2e": "webdriver-manager update",
+    "e2e": "protractor"
   },
   "licenses": [
     {
@@ -36,6 +38,16 @@
     "@types/node": "^6.0.45",
     "concurrently": "^3.0.0",
     "lite-server": "^2.2.2",
-    "typescript": "^2.0.3"
+    "typescript": "^2.0.3",
+    "protractor": "4.0.5",
+    "jasmine-core": "2.4.1",
+    "jasmine-spec-reporter": "2.5.0",
+    "karma": "1.2.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-remap-istanbul": "^0.2.1",
+    "ts-node": "1.2.1",
+    "tslint": "3.13.0"
   }
 }
