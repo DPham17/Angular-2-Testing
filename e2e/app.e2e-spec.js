@@ -1,12 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var app_po_1 = require("./app.po");
 var globals_1 = require("protractor/globals");
 describe('angular2-end-to-end App', function () {
-    var page;
-    beforeEach(function () {
-        page = new app_po_1.Angular2EndToEndPage();
-    });
     it('should display message saying my sandboxs', function () {
         globals_1.browser.get("/");
         var getTitle = globals_1.element(globals_1.by.css('my-app h1')).getText();

@@ -1,12 +1,6 @@
-import { Angular2EndToEndPage } from './app.po';
 import { browser, element, by } from 'protractor/globals';
 
 describe('angular2-end-to-end App', function() {
-  let page: Angular2EndToEndPage;
-
-  beforeEach(() => {
-    page = new Angular2EndToEndPage();
-  });
 
   it('should display message saying my sandboxs', () => {
     browser.get("/");

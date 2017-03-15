@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, Attribute } from '@angular/core';
 import { FlurriesComponent } from './weather/flurries.component';
 import { SunnyComponent } from './weather/sunny.component';
 import { ThunderComponent } from './weather/thunder-storm.component';
@@ -30,6 +30,14 @@ const WEATHERS: Weather[] = [
 export class AppComponent {
   types = ['Sunny', 'Flurries', 'Thunder', 'Rainy', 'Sun-Shower', 'Cloudy'];
   spot = getRandomInt(0,6);
+
+  // To pipe current date and time
+  date : Date = new Date();
+  constructor() {
+    setInterval(() => {
+        this.date =  new Date();
+     }, 1000);
+  }
 
   weather = WEATHERS;
   selectedWeather: Weather;
