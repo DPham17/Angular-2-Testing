@@ -1,34 +1,5 @@
-<h1>MY SANDBOX</h1>
-<h2>Animated Weather Icons</h2>
-<div>
-  <div>
-    <font>{{date | date: 'MM/dd/yyyy'}}</font>
-  </div>
-  <div>
-    <font>{{date | date: 'hh:mm:ss'}}</font>
-  </div>
-  <div [ngSwitch]="types[spot]">
-    <sunny *ngSwitchCase = "'Sunny'"></sunny>
-    <flurries *ngSwitchCase = "'Flurries'"></flurries>
-    <thunder *ngSwitchCase = "'Thunder'"></thunder>
-    <rainy *ngSwitchCase = "'Rainy'"></rainy>
-    <sun-shower *ngSwitchCase = "'Sun-Shower'"></sun-shower>
-    <cloudy *ngSwitchCase = "'Cloudy'"></cloudy>
-  </div>
 
-  <div>
-    <h3>List of Weather Icons</h3>
-    <ul class="weather">
-      <li *ngFor="let types of weather"
-          [class.selected]="types == selectedWeather"
-          (click)="onSelect(types)"
-          class="weatherList">
-        <span class="listNames">{{types.name}}</span>
-      </li>
-    </ul>
-    <div *ngIf="selectedWeather">
-      <h1 class="weatherTitle">{{selectedWeather.name}} Icon</h1>
-    </div>
-  </div>
-
-</div>
+<h1> MY SANDBOX </h1>
+<a routerLink="">Home</a>
+<a routerLink="service">Service</a>
+<router-outlet></router-outlet>
