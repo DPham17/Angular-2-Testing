@@ -2,11 +2,11 @@ import { Component, NgModule, Attribute } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 @Component({
-  selector: 'my-app',
+  selector: 'my-profile',
   moduleId: module.id,
-  templateUrl: 'app.component.html',
-  styleUrls : ['app.component.css']
+  templateUrl: 'profile.component.html',
+  styleUrls: ['profile.component.css']
 })
 
-export class AppComponent {
+export class ProfileComponent {
 }

@@ -3,8 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { routing }       from './app.routing';
 
 import { AppComponent }   from './app.component';
-import { HomeComponent } from './home-page.component';
+import { HomeComponent } from './home.component';
 import { ServiceComponent } from './service/service.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ErrorComponent } from './notfound.component';
+
 import { FlurriesComponent } from './weather/flurries.component';
 import { SunnyComponent } from './weather/sunny.component';
 import { ThunderComponent } from './weather/thunder-storm.component';
@@ -21,6 +24,8 @@ import { CloudyComponent } from './weather/cloudy.component';
     AppComponent,
     HomeComponent,
     ServiceComponent,
+    ProfileComponent,
+    ErrorComponent,
     SunnyComponent,
     FlurriesComponent,
     ThunderComponent,

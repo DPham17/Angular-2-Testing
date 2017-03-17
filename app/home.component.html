@@ -3,9 +3,6 @@
   <div>
     <font>{{date | date: 'MM/dd/yyyy'}}</font>
   </div>
-  <div>
-    <font>{{date | date: 'hh:mm:ss'}}</font>
-  </div>
   <div [ngSwitch]="types[spot]">
     <sunny *ngSwitchCase = "'Sunny'"></sunny>
     <flurries *ngSwitchCase = "'Flurries'"></flurries>

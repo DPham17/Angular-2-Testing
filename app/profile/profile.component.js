@@ -7,21 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var WeatherComponent = (function () {
-    function WeatherComponent() {
+var ProfileComponent = (function () {
+    function ProfileComponent() {
     }
-    WeatherComponent.prototype.getWeather = function () {
-        return ["Sunny", "Foggy", "Windy", "Snowing"];
-    };
-    return WeatherComponent;
+    return ProfileComponent;
 }());
-WeatherComponent = __decorate([
+ProfileComponent = __decorate([
     core_1.Component({
-        selector: 'my-weather',
+        selector: 'my-profile',
         moduleId: module.id,
-        templateUrl: 'weather.component.html',
-        styleUrls: ['weather.component.css']
+        templateUrl: 'profile.component.html',
+        styleUrls: ['profile.component.css']
     })
-], WeatherComponent);
-exports.WeatherComponent = WeatherComponent;
-//# sourceMappingURL=weather.component.js.map
+], ProfileComponent);
+exports.ProfileComponent = ProfileComponent;
+//# sourceMappingURL=profile.component.js.map

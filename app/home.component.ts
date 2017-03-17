@@ -23,10 +23,10 @@ const WEATHERS: Weather[] = [
 ];
 
 @Component({
-  selector: 'my-app',
+  selector: 'my-home',
   moduleId: module.id,
-  templateUrl: 'home-page.component.html',
-  styleUrls: ['home-page.component.css']
+  templateUrl: 'home.component.html',
+  styleUrls: ['home.component.css']
 })
 
 export class HomeComponent {
@@ -35,11 +35,6 @@ export class HomeComponent {
 
   // To pipe current date and time
   date : Date = new Date();
-  constructor() {
-    setInterval(() => {
-        this.date =  new Date();
-     }, 1000);
-  }
 
   weather = WEATHERS;
   selectedWeather: Weather;

@@ -7,18 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var ServiceComponent = (function () {
-    function ServiceComponent() {
+var ErrorComponent = (function () {
+    function ErrorComponent() {
     }
-    return ServiceComponent;
+    return ErrorComponent;
 }());
-ServiceComponent = __decorate([
+ErrorComponent = __decorate([
     core_1.Component({
-        selector: 'my-service',
+        selector: 'my-error',
         moduleId: module.id,
-        templateUrl: 'service.component.html',
-        styleUrls: ['service.component.css']
+        templateUrl: 'notfound.component.html',
+        styleUrls: ['notfound.component.css']
     })
-], ServiceComponent);
-exports.ServiceComponent = ServiceComponent;
-//# sourceMappingURL=service.component.js.map
+], ErrorComponent);
+exports.ErrorComponent = ErrorComponent;
+//# sourceMappingURL=notfound.component.js.map
