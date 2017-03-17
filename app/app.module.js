@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_routing_1 = require("./app.routing");
+var material_1 = require("@angular/material");
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./home.component");
 var service_component_1 = require("./service/service.component");
@@ -29,6 +30,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [
             platform_browser_1.BrowserModule,
+            material_1.MaterialModule,
             app_routing_1.routing
         ],
         declarations: [
