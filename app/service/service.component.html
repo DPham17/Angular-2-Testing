@@ -1,5 +1,16 @@
 <h2> Services at your service </h2>
 
-<h3>
-  Under Construction
-</h3>
+<div>
+  <h3>List of Weather Icons</h3>
+  <ul class="weather">
+    <li *ngFor="let types of weather"
+        [class.selected]="types == selectedWeather"
+        (click)="onSelect(types)"
+        class="weatherList">
+      <span class="listNames">{{types.name}}</span>
+    </li>
+  </ul>
+  <div *ngIf="selectedWeather">
+    <h1 class="weatherTitle">{{selectedWeather.name}} Icon</h1>
+  </div>
+</div>

@@ -7,9 +7,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var Weather = (function () {
+    function Weather() {
+    }
+    return Weather;
+}());
+exports.Weather = Weather;
+var WEATHERS = [
+    { id: 1, name: 'Sunny' },
+    { id: 2, name: 'Flurries' },
+    { id: 3, name: 'Thunder' },
+    { id: 4, name: 'Rainy' },
+    { id: 5, name: 'Sun-Shower' },
+    { id: 6, name: 'Cloudy' }
+];
 var ServiceComponent = (function () {
     function ServiceComponent() {
+        this.weather = WEATHERS;
     }
+    ServiceComponent.prototype.onSelect = function (weather) {
+        this.selectedWeather = weather;
+    };
     return ServiceComponent;
 }());
 ServiceComponent = __decorate([

@@ -4,27 +4,19 @@
     <font>{{date | date: 'MM/dd/yyyy'}}</font>
   </div>
   <div [ngSwitch]="types[spot]">
-    <sunny *ngSwitchCase = "'Sunny'"></sunny>
+    <sunny *ngSwitchCase = "'Sunny'"><h2>SUNNY</h2></sunny>
     <flurries *ngSwitchCase = "'Flurries'"></flurries>
     <thunder *ngSwitchCase = "'Thunder'"></thunder>
     <rainy *ngSwitchCase = "'Rainy'"></rainy>
     <sun-shower *ngSwitchCase = "'Sun-Shower'"></sun-shower>
     <cloudy *ngSwitchCase = "'Cloudy'"></cloudy>
-  </div>
 
-  <div>
-    <h3>List of Weather Icons</h3>
-    <ul class="weather">
-      <li *ngFor="let types of weather"
-          [class.selected]="types == selectedWeather"
-          (click)="onSelect(types)"
-          class="weatherList">
-        <span class="listNames">{{types.name}}</span>
-      </li>
-    </ul>
-    <div *ngIf="selectedWeather">
-      <h1 class="weatherTitle">{{selectedWeather.name}} Icon</h1>
-    </div>
+    <h1 *ngSwitchCase="'Sunny'">Sunny</h1>
+    <h1 *ngSwitchCase = "'Flurries'">Flurries</h1>
+    <h1 *ngSwitchCase = "'Thunder'">Thunder</h1>
+    <h1 *ngSwitchCase = "'Rainy'">Rainy</h1>
+    <h1 *ngSwitchCase = "'Sun-Shower'">Sun-Shower</h1>
+    <h1 *ngSwitchCase = "'Cloudy'">Cloudy</h1>
   </div>
 
 </div>

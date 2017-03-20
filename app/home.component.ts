@@ -8,20 +8,6 @@ import { RainyComponent } from './weather/rainy.component';
 import { SunShowerComponent } from './weather/sun-shower.component';
 import { CloudyComponent } from './weather/cloudy.component';
 
-export class Weather {
-  id: number;
-  name: string;
-}
-
-const WEATHERS: Weather[] = [
-  { id: 1, name: 'Sunny' },
-  { id: 2, name: 'Flurries' },
-  { id: 3, name: 'Thunder' },
-  { id: 4, name: 'Rainy' },
-  { id: 5, name: 'Sun-Shower' },
-  { id: 6, name: 'Cloudy' }
-];
-
 @Component({
   selector: 'my-home',
   moduleId: module.id,
@@ -33,15 +19,8 @@ export class HomeComponent {
   types = ['Sunny', 'Flurries', 'Thunder', 'Rainy', 'Sun-Shower', 'Cloudy'];
   spot = getRandomInt(0,6);
 
-  // To pipe current date and time
+  // To pipe current date
   date : Date = new Date();
-
-  weather = WEATHERS;
-  selectedWeather: Weather;
-
-  onSelect(weather: Weather): void {
-    this.selectedWeather = weather;
-  }
 
 }
 
