@@ -1,4 +1,4 @@
-import { browser, element, by } from 'protractor/globals';
+import { browser, element, by } from 'protractor';
 
 describe('Testing Homepage', function() {
   beforeEach(() => {
@@ -6,9 +6,11 @@ describe('Testing Homepage', function() {
   });
 
   it('should display message saying my sandboxs', () => {
-    let getTitle = element(by.css('.webTitle')).getText();
-    expect(getTitle).toEqual('MY SANDBOX');
+    let getTitle = element(by.className('webTitle')).getText();
+    expect(getTitle).toMatch('MY SANDBOX');
   });
+
+
 
   it('should click the first element of the list', () => {
 
@@ -18,8 +20,17 @@ describe('Testing Homepage', function() {
     // Test the output from the click of the list
     let outputWeather = element(by.css(".weatherTitle")).getText();
 
-    expect(outputWeather).toEqual('Sunny Icon')
+    expect(outputWeather).toMatch('Sunny Icon');
+  });
 
+
+
+  it('should nagivate from homepage to service page', () => {
+    element(by.buttonText('Service')).click();
+
+    let serviceText = element(by.css("my-service h2"));
+
+    expect(serviceText.isPresent()).toBeTruthy();
   });
 
 });
