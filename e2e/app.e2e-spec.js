@@ -9,14 +9,20 @@ describe('Testing Homepage', function () {
         var getTitle = protractor_1.element(protractor_1.by.className('webTitle')).getText();
         expect(getTitle).toMatch('MY SANDBOX');
     });
-    it('should click the first element of the list', function () {
-        // Clicks the first element of the list
-        var weatherList = protractor_1.element.all(protractor_1.by.css('.weatherList')).get(0).click();
-        // Test the output from the click of the list
-        var outputWeather = protractor_1.element(protractor_1.by.css(".weatherTitle")).getText();
-        expect(outputWeather).toMatch('Sunny Icon');
+    it('should click every list items and compare its values', function () {
+        var outputWeather;
+        var icons = ['Sunny Icon', 'Flurries Icon', 'Thunder Icon', 'Rainy Icon', 'Sun-Shower', 'Cloudy Icon'];
+        for (var i = 0; i < 6; i++) {
+            // clicks an item on the list
+            protractor_1.element.all(protractor_1.by.css('.weatherList')).get(i).click();
+            // gets the output test after clicking
+            outputWeather = protractor_1.element(protractor_1.by.css(".weatherTitle")).getText();
+            // compare it to the static array to make sure values are correct
+            expect(outputWeather).toMatch(icons[i]);
+        }
     });
     it('should nagivate from homepage to service page', function () {
+        // clicks a link in the header bar
         protractor_1.element(protractor_1.by.buttonText('Service')).click();
         var serviceText = protractor_1.element(protractor_1.by.css("my-service h2"));
         expect(serviceText.isPresent()).toBeTruthy();

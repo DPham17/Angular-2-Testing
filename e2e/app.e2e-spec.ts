@@ -11,21 +11,25 @@ describe('Testing Homepage', function() {
   });
 
 
+  it('should click every list items and compare its values', () => {
+    let outputWeather;
+    let icons = ['Sunny Icon', 'Flurries Icon', 'Thunder Icon', 'Rainy Icon', 'Sun-Shower', 'Cloudy Icon'];
 
-  it('should click the first element of the list', () => {
+    for(var i = 0; i < 6; i++){
+      // clicks an item on the list
+      element.all(by.css('.weatherList')).get(i).click();
 
-    // Clicks the first element of the list
-    let weatherList = element.all(by.css('.weatherList')).get(0).click();
+      // gets the output test after clicking
+      outputWeather = element(by.css(".weatherTitle")).getText();
 
-    // Test the output from the click of the list
-    let outputWeather = element(by.css(".weatherTitle")).getText();
-
-    expect(outputWeather).toMatch('Sunny Icon');
+      // compare it to the static array to make sure values are correct
+      expect(outputWeather).toMatch(icons[i]);
+    }
   });
 
 
-
   it('should nagivate from homepage to service page', () => {
+    // clicks a link in the header bar
     element(by.buttonText('Service')).click();
 
     let serviceText = element(by.css("my-service h2"));
